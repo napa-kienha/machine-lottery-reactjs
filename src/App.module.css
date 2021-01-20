@@ -1,0 +1,704 @@
+@keyframes zoomInBackground {
+  0% {
+    transform: scale(1);
+    background-size: 150%;
+    background-position: 50% 50%;
+  }
+  40% {
+    transform: scale(1);
+    background-size: 300%;
+    background-position: 50% 50%;
+  }
+  50% {
+    transform: scale(1);
+    background-size: 310%;
+    background-position: 50% 50%;
+  }
+  65% {
+    transform: scale(1);
+    background-size: 320%;
+    background-position: 50% 50%;
+  }
+  75% {
+    transform: scale(1);
+    background-size: 320%;
+    background-position: 50% 85%;
+  }
+  90% {
+    transform: scale(1);
+    background-size: 320%;
+    background-position: 50% 85%;
+  }
+  100% {
+    transform: scale(3);
+    background-size: 320%;
+    background-position: 50% 85%;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0.2px, 0.2px);
+  }
+  10% {
+    transform: translate(-0.2px, -0.4px);
+  }
+  20% {
+    transform: translate(-0.8px, 0px);
+  }
+  30% {
+    transform: translate(0.6px, 0.4px);
+  }
+  40% {
+    transform: translate(0.2px, -0.2px);
+  }
+  50% {
+    transform: translate(-0.2px, 0.4px);
+  }
+  60% {
+    transform: translate(-0.8px, 0.2px);
+  }
+  70% {
+    transform: translate(0.8px, 0.2px);
+  }
+  80% {
+    transform: translate(-0.2px, -0.2px);
+  }
+  90% {
+    transform: translate(0.2px, 0.4px);
+  }
+  100% {
+    transform: translate(0.2px, -0.4px);
+  }
+}
+
+@keyframes zooming {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.8);
+  }
+  90% {
+    transform: scale(2.4);
+  }
+  100% {
+    transform: scale(5);
+  }
+}
+
+:root {
+  --backgroundAnimationtime: 5s;
+  --zoomingShakeAnimationtime: 8s;
+  --delayShowingResult: 2s;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapperShake {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  animation: zooming var(--zoomingShakeAnimationtime) linear forwards;
+}
+
+.containerShake {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.wrapperZoom {
+  width: 600px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("assets/machine.jpg");
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 320%;
+  background-position: 50% 50%;
+  animation: zoomInBackground var(--backgroundAnimationtime) forwards;
+  animation-timing-function: cubic-bezier(0.31, 0.4, 0.25, 0.73);
+}
+
+.box {
+  width: 100%;
+  height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* border: 1px solid #000; */
+  overflow: hidden;
+  margin-bottom: 52px;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+@keyframes gradientLighting {
+  0% {
+    background-image: radial-gradient(circle at center, #fff 0%, transparent);
+  }
+  5% {
+    background-image: radial-gradient(circle at center, #fff 5%, transparent);
+  }
+  10% {
+    background-image: radial-gradient(circle at center, #fff 10%, transparent);
+  }
+  15% {
+    background-image: radial-gradient(circle at center, #fff 15%, transparent);
+  }
+  20% {
+    background-image: radial-gradient(circle at center, #fff 20%, transparent);
+  }
+  25% {
+    background-image: radial-gradient(circle at center, #fff 25%, transparent);
+  }
+  30% {
+    background-image: radial-gradient(circle at center, #fff 30%, transparent);
+  }
+  35% {
+    background-image: radial-gradient(circle at center, #fff 35%, transparent);
+  }
+  40% {
+    background-image: radial-gradient(circle at center, #fff 40%, transparent);
+  }
+  45% {
+    background-image: radial-gradient(circle at center, #fff 45%, transparent);
+  }
+  50% {
+    background-image: radial-gradient(circle at center, #fff 50%, transparent);
+  }
+  55% {
+    background-image: radial-gradient(circle at center, #fff 55%, transparent);
+  }
+  60% {
+    background-image: radial-gradient(circle at center, #fff 60%, transparent);
+  }
+  65% {
+    background-image: radial-gradient(circle at center, #fff 65%, transparent);
+  }
+  70% {
+    background-image: radial-gradient(circle at center, #fff 70%, transparent);
+  }
+  75% {
+    background-image: radial-gradient(circle at center, #fff 75%, transparent);
+  }
+  80% {
+    background-image: radial-gradient(circle at center, #fff 80%, transparent);
+  }
+  85% {
+    background-image: radial-gradient(circle at center, #fff 85%, transparent);
+  }
+  90% {
+    background-image: radial-gradient(circle at center, #fff 90%, transparent);
+  }
+  95% {
+    background-image: radial-gradient(circle at center, #fff 95%, transparent);
+  }
+  100% {
+    background-image: radial-gradient(circle at center, #fff 100%, transparent);
+  }
+}
+
+@keyframes lightingIn {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lightingOut {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.lightingIn,
+.lightingOut {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.lightingIn {
+  z-index: 1999;
+  background-color: #fff;
+  animation: lightingIn 1s linear forwards;
+}
+
+.lightingOut {
+  z-index: 1999;
+  animation: gradientLighting 1s linear forwards;
+  animation-delay: calc(var(--backgroundAnimationtime) - 0.3s);
+}
+
+.lightingOutShake {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1999;
+  animation: gradientLighting 2s linear forwards;
+  animation-delay: calc(var(--zoomingShakeAnimationtime) - 0.1s);
+}
+
+.gradientLighting {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1999;
+  animation: gradientLighting 0.5s linear forwards;
+  animation-delay: calc(var(--backgroundAnimationtime) - 0.05s);
+}
+
+.backgroundOverview {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.floatBackground {
+  position: absolute;
+  background-color: #000;
+  opacity: 0.6;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.machineLarge {
+  height: 100%;
+}
+
+@keyframes ballShake {
+  0% {
+    transform: translateY(0%);
+  }
+  10% {
+    transform: translateY(-15%);
+  }
+  20% {
+    transform: translateY(0%);
+  }
+  30% {
+    transform: translateY(-15%);
+  }
+  40% {
+    transform: translateY(0%);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ballMinimize {
+  0% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 250px;
+    width: 250px;
+  }
+  5% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 210px;
+    width: 230px;
+  }
+  10% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 230px;
+    width: 240px;
+  }
+  15% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 200px;
+    width: 220px;
+  }
+  20%,
+  30%,
+  40%,
+  50% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 220px;
+    width: 230px;
+  }
+  25%,
+  35%,
+  45%,
+  55% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 210px;
+    width: 220px;
+  }
+  60% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 200px;
+    width: 210px;
+  }
+  65% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 205px;
+    width: 215px;
+  }
+  70% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 190px;
+    width: 200px;
+  }
+  75% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 185px;
+    width: 195px;
+  }
+  80% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 190px;
+    width: 200px;
+  }
+  85% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 185px;
+    width: 195px;
+  }
+  90% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 190px;
+    width: 200px;
+  }
+  95% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 185px;
+    width: 195px;
+  }
+  100% {
+    transform: translateY(0);
+    transform: rotate(0deg);
+    height: 220px;
+    width: 230px;
+  }
+}
+
+.ballShowPriceContainer,
+.ballShowPriceOpenContainer,
+.ballShowPriceOpenLightingContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ballShowPriceContainer {
+  z-index: 3;
+}
+
+.ballShowPriceOpenContainer {
+  z-index: 4;
+}
+
+.ballShowPriceOpenLightingContainer {
+  z-index: 5;
+}
+
+.ballShowPrice {
+  width: 250px;
+  height: 250px;
+  transform-origin: bottom;
+  animation-delay: 1s;
+  animation: ballShake 1s infinite, ballMinimize 2s 3s forwards;
+}
+
+.ballShowPriceOpen {
+  width: 250px;
+  height: 330px;
+  background-image: url("assets/ball1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ballShowPriceOpenLighting {
+  width: 415px;
+  height: 410px;
+  background-image: url("assets/ball2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.glasses {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30.2%;
+  width: 268px;
+  height: auto;
+}
+
+.boxLottie {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30.2%;
+  width: 268px;
+  height: 268px;
+  /* border: 1px solid #000; */
+  border-radius: 50%;
+}
+
+.hide {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.shaking {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-150%);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(150%);
+  }
+}
+
+.doorBox {
+  position: absolute;
+  width: 243px;
+  height: 243px;
+  left: 50%;
+  transform: translateX(-50.4%);
+  top: 31.5%;
+  display: flex;
+  z-index: 9;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.doorLeft,
+.doorRight {
+  height: 100%;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+.doorLeft {
+  animation-name: slideOutLeft;
+}
+
+.doorRight {
+  animation-name: slideOutRight;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f2f3;
+}
+
+.wrapperResult {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@keyframes bubblesTitleAppear {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1.8);
+  }
+}
+
+@keyframes shiningRotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes visibilityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showingResults {
+  0% {
+    opacity: 0;
+    transform: scale(1.8) rotate(-50deg);
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.titleContainer {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+
+.getTitle {
+  height: 150px;
+  transform: scale(0);
+  animation: bubblesTitleAppear 0.5s calc(var(--delayShowingResult) + 0.3s)
+    ease-out forwards;
+}
+
+.resultTickerContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 8;
+}
+
+.shiningContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 7;
+}
+
+.imgResultTicker {
+  width: 250px;
+  opacity: 0;
+  transform: scale(1.8) rotate(-20deg);
+  animation: showingResults 0.5s var(--delayShowingResult) linear forwards;
+}
+
+.shining {
+  opacity: 0;
+  animation: visibilityIn 0.5s calc(var(--delayShowingResult) + 0.3s) linear
+      forwards,
+    shiningRotate 4s calc(var(--delayShowingResult) + 0.3s) linear infinite;
+}
