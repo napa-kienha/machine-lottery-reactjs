@@ -13,13 +13,13 @@ import GetTitle from "./assets/get_r.png";
 import ResultImg from "./assets/results.png";
 import Shining from "./assets/shining.png";
 
-const showShadow = 1;
+const showShadow = 0;
 const showLighting = 1;
-const showFallingBall = 1;
-const NUM_OF_BALLS = 20;
+const showFallingBall = 0;
+const NUM_OF_BALLS = 15;
 
 function App() {
-  const [stepAnimation, setStepAnimation] = useState(1);
+  const [stepAnimation, setStepAnimation] = useState(2);
   const [ballStatus, setBallStatus] = useState(1);
 
   // useEffect(() => {
@@ -78,21 +78,22 @@ function App() {
           </div>
           <div className={appStyles.boxLottie}>
             {Array.from({ length: NUM_OF_BALLS }, (_, i) => {
-              return Math.random() > 0.9 ? (
+              return Math.random() > 0.8 ? (
                 <div
                   key={i}
-                  className={ballStyles.circleRoad}
+                  className={ballStyles.ovalRoad}
                   style={{
                     zIndex: i + 20,
                     transform: `rotate(${Math.random() * 180}deg)`,
-                    animationDirection: "normal",
-                    animationDuration: `${Math.random() * 0.7 + 0.7}s`,
                   }}
                 >
                   <img
-                    src={Math.random() > 0.5 ? BallImg : BlackBallImg}
+                    src={i % 2 === 0 ? BallImg : BlackBallImg}
                     alt=""
                     className={ballStyles.ballRunOval}
+                    style={{
+                      animationDuration: `${Math.random() + 0.7}s`,
+                    }}
                   />
                 </div>
               ) : (
@@ -101,18 +102,17 @@ function App() {
                   className={clsx(ballStyles.circleRoad)}
                   style={{
                     zIndex: i + 60,
-                    animationDirection:
-                      Math.random() > 0.8 ? "normal" : "reverse",
-                    animationDuration: `${Math.random() * 0.6 + 0.35}s`,
+                    animationDirection: i % 2 === 0 ? "normal" : "reverse",
+                    animationDuration: `${Math.random() * 0.6 + 0.25}s`,
                   }}
                 >
                   <img
-                    src={Math.random() > 0.5 ? BallImg : BlackBallImg}
+                    src={i % 2 === 0 ? BallImg : BlackBallImg}
                     alt=""
                     className={ballStyles.ballRunCircle}
                     style={{
-                      top: `${Math.random() * 12 + 16.5}0%`,
-                      left: `${Math.random() * 12 + 16.5}0%`,
+                      top: `${Math.random() * 10 + 15.5}0%`,
+                      left: `${Math.random() * 10 + 15.5}0%`,
                     }}
                   />
                 </div>
@@ -128,9 +128,10 @@ function App() {
         )}
       >
         <div className={appStyles.background}>
-          {!!showLighting && <div className={appStyles.lightingIn} />}
-          {!!showLighting && <div className={appStyles.lightingOut} />}
+          {/* {!!showLighting && <div className={appStyles.lightingIn} />}
+          {!!showLighting && <div className={appStyles.lightingOut} />} */}
           <div className={appStyles.box}>
+            {/* <div className={appStyles.hole} /> */}
             <img src={BallImg} alt="" className={ballStyles.rollingBall} />
             {!!showShadow && (
               <img

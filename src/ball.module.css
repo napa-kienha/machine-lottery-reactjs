@@ -4,6 +4,8 @@
   --startTopRollingBall: -5%;
   --delayRollingBallAnimation: 1s;
   --delayFallingBallAnimation: 3.7s;
+  --ballCircleWidth: 55px;
+  --ballRollingSize: 200px;
 }
 
 @keyframes spin {
@@ -67,8 +69,8 @@
 
 .rollingBall {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: var(--ballRollingSize);
+  height: var(--ballRollingSize);
   animation: spin 1s linear infinite, rollToHole 2s linear forwards;
   right: var(--startRightRollingBall);
   top: var(--startTopRollingBall);
@@ -93,8 +95,8 @@
 
 .fallingBall {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: var(--ballRollingSize);
+  height: var(--ballRollingSize);
   animation: fallingBall 0.75s linear forwards;
   top: var(--startTopFallingBall);
 }
@@ -125,23 +127,14 @@
   }
 }
 
-@keyframes yAxis {
-  50% {
-    animation-timing-function: ease-out;
-    transform: translateY(160px);
-  }
-}
-
-@keyframes xAxis {
-  50% {
-    animation-timing-function: ease-in;
-    transform: translateX(190px);
-  }
-}
-.circleRoad {
+.circleRoad,
+.ovalRoad {
   width: 100%;
   height: 100%;
   position: absolute;
+}
+
+.circleRoad {
   animation-name: rotateCircle;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -149,7 +142,7 @@
 
 .ballRunCircle {
   height: auto;
-  width: 45px;
+  width: var(--ballCircleWidth);
   position: absolute;
   animation-duration: 0.6s;
   animation-name: spin;
@@ -157,57 +150,92 @@
   animation-iteration-count: infinite;
 }
 
-/* .ovalMovitationDot {
-  animation: xAxis 1.5s infinite ease-in;
-  transform: translateX(50px);
-}
-
-.ovalMovitationDot::after {
-  transform: translateY(50px);
-  content: "";
-  display: block;
-  width: 45px;
-  height: 45px;
-  border-radius: 20px;
-  background-image: url("assets/ball.png");
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
-  animation: yAxis 1.5s infinite ease-out;
-} */
-
 @keyframes randomTrajectory {
   0% {
-    top: 20%;
-    left: 20%;
+    top: 22%;
+    left: 22%;
   }
-  20% {
+  15% {
     top: 65%;
     left: 20%;
   }
-  40% {
+  30% {
     top: 46%;
     left: 72%;
   }
-  60% {
+  50% {
     top: 24%;
     left: 67%;
   }
-  80% {
+  70% {
     top: 71%;
     left: 55%;
   }
   100% {
-    top: 20%;
-    left: 20%;
+    top: 22%;
+    left: 22%;
   }
 }
 
 .ballRunOval {
-  width: 45px;
+  width: var(--ballCircleWidth);
   height: auto;
   position: absolute;
-  top: 20%;
-  left: 20%;
+  top: 22%;
+  left: 22%;
   animation: randomTrajectory 1.5s linear infinite;
+}
+
+@media screen and (max-width: 1600px) {
+  :root {
+    --ballCircleWidth: 50px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .background {
+    width: 500px;
+    height: 900px;
+  }
+  .wrapperZoom {
+    width: 500px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .background {
+    width: 375px;
+    height: 720px;
+  }
+}
+
+@media (max-height: 800px) {
+  :root {
+    --ballCircleWidth: 50px;
+  }
+}
+
+@media (min-width: 400px) and (max-height: 800px) {
+  :root {
+    --ballCircleWidth: 40px;
+  }
+}
+
+@media (max-height: 768px) {
+  :root {
+    --ballCircleWidth: 40px;
+  }
+}
+
+@media (max-height: 600px) {
+  :root {
+    --ballCircleWidth: 35px;
+  }
+}
+
+@media (max-height: 420px) {
+  :root {
+    --ballCircleWidth: 20px;
+  }
 }
